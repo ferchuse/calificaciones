@@ -67,7 +67,7 @@
 									<span class="navbar-toggler-bar bar3"></span>
 								</button>
 							</div>
-							<a class="navbar-brand" href="#pablo">User Profile</a>
+							<a class="navbar-brand" href="#pablo">Mis Datos</a>
 						</div>
 						<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
 							<span class="navbar-toggler-bar navbar-kebab"></span>
@@ -75,20 +75,11 @@
 							<span class="navbar-toggler-bar navbar-kebab"></span>
 						</button>
 						<div class="collapse navbar-collapse justify-content-end" id="navigation">
-							<form>
-								<div class="input-group no-border">
-									<input type="text" value="" class="form-control" placeholder="Search...">
-									<div class="input-group-append">
-										<div class="input-group-text">
-											<i class="now-ui-icons ui-1_zoom-bold"></i>
-										</div>
-									</div>
-								</div>
-							</form>
+							
 							<ul class="navbar-nav">
 								<li class="nav-item">
-									<a class="nav-link" href="#pablo">
-										<i class="now-ui-icons media-2_sound-wave"></i>
+							
+								
 										<p>
 											<span class="d-lg-none d-md-block">Stats</span>
 										</p>
@@ -161,80 +152,61 @@
 						<div class="col-md-8">
 							<div class="card">
 								<div class="card-header">
-									<h5 class="title">Edit Profile</h5>
+									<h5 class="title"> PERFIL </h5>
 								</div>
 								<div class="card-body">
 									<form>
 										<div class="row">
 											<div class="col-md-5 pr-1">
 												<div class="form-group">
-													<label>Company (disabled)</label>
-													<input type="text" class="form-control" disabled="" placeholder="Company" value="Creative Code Inc.">
+													<label> Matricula </label>
+													<input type="text" class="form-control" placeholder="Matricula">
 												</div>
 											</div>
 											<div class="col-md-3 px-1">
 												<div class="form-group">
-													<label>Username</label>
-													<input type="text" class="form-control" placeholder="Username" value="michael23">
+													<label> Nombre </label>
+													<input type="text" class="form-control" placeholder="Nombre">
 												</div>
 											</div>
+											<div class="col-md-3 px-1">
+												<div class="form-group">
+													<label> Apellidos </label>
+													<input type="text" class="form-control" placeholder="Apellidos">
+												</div>
+											</div>
+											<div class="col-md-3 px-1">
+												<div class="form-group">
+													<label> Sexo </label>
+												<select name="select1" id="select1" class="form-control">
+                                    <option value="1"> M </option>
+                                    <option value="2"> F </option>
+                                </select>
+												</div>
+											</div>
+											<div class="col-md-3 px-1">
+												<div class="form-group">
+													<label> Fecha De Nacimiento </label>
+													<input type="date" class="form-control" placeholder="Fecha De Nacimiento">
+												</div>
+											</div>
+											<div class="col-md-3 px-1">
+												<div class="form-group">
+													<label> Telefono </label>
+													<input type="tel" class="form-control" placeholder="Telefono">
+												</div>
+											</div>
+											
+
 											<div class="col-md-4 pl-1">
 												<div class="form-group">
-													<label for="exampleInputEmail1">Email address</label>
+													<label for="exampleInputEmail1">Correo</label>
 													<input type="email" class="form-control" placeholder="Email">
 												</div>
 											</div>
 										</div>
-										<div class="row">
-											<div class="col-md-6 pr-1">
-												<div class="form-group">
-													<label>First Name</label>
-													<input type="text" class="form-control" placeholder="Company" value="Mike">
-												</div>
-											</div>
-											<div class="col-md-6 pl-1">
-												<div class="form-group">
-													<label>Last Name</label>
-													<input type="text" class="form-control" placeholder="Last Name" value="Andrew">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<label>Address</label>
-													<input type="text" class="form-control" placeholder="Home Address" value="Bld Mihail Kogalniceanu, nr. 8 Bl 1, Sc 1, Ap 09">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-4 pr-1">
-												<div class="form-group">
-													<label>City</label>
-													<input type="text" class="form-control" placeholder="City" value="Mike">
-												</div>
-											</div>
-											<div class="col-md-4 px-1">
-												<div class="form-group">
-													<label>Country</label>
-													<input type="text" class="form-control" placeholder="Country" value="Andrew">
-												</div>
-											</div>
-											<div class="col-md-4 pl-1">
-												<div class="form-group">
-													<label>Postal Code</label>
-													<input type="number" class="form-control" placeholder="ZIP Code">
-												</div>
-											</div>
-										</div>
-										<div class="row">
-											<div class="col-md-12">
-												<div class="form-group">
-													<label>About Me</label>
-													<textarea rows="4" cols="80" class="form-control" placeholder="Here can be your description" value="Mike">Lamborghini Mercy, Your chick she so thirsty, I'm in that two seat Lambo.</textarea>
-												</div>
-											</div>
-										</div>
+										
+										
 									</form>
 								</div>
 							</div>
