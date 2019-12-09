@@ -120,260 +120,85 @@
 						<div class="col-md-12">
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title"> Simple Table</h4>
+									<h4 class="card-title"> Modalidad: Bachillerato 6 meses </h4>
+									<h4 class="card-title"> Grupo: 2º Trimestre </h4>
 								</div>
 								<div class="card-body">
 									<div class="table-responsive">
-										<table class="table">
-											<thead class=" text-primary">
-												<th>
-													Name
-												</th>
-												<th>
-													Country
-												</th>
-												<th>
-													City
-												</th>
-												<th class="text-right">
-													Salary
-												</th>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														Dakota Rice
-													</td>
-													<td>
-														Niger
-													</td>
-													<td>
-														Oud-Turnhout
-													</td>
-													<td class="text-right">
-														$36,738
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Minerva Hooper
-													</td>
-													<td>
-														Curaçao
-													</td>
-													<td>
-														Sinaai-Waas
-													</td>
-													<td class="text-right">
-														$23,789
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Sage Rodriguez
-													</td>
-													<td>
-														Netherlands
-													</td>
-													<td>
-														Baileux
-													</td>
-													<td class="text-right">
-														$56,142
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Philip Chaney
-													</td>
-													<td>
-														Korea, South
-													</td>
-													<td>
-														Overland Park
-													</td>
-													<td class="text-right">
-														$38,735
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Doris Greene
-													</td>
-													<td>
-														Malawi
-													</td>
-													<td>
-														Feldkirchen in Kärnten
-													</td>
-													<td class="text-right">
-														$63,542
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Mason Porter
-													</td>
-													<td>
-														Chile
-													</td>
-													<td>
-														Gloucester
-													</td>
-													<td class="text-right">
-														$78,615
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Jon Porter
-													</td>
-													<td>
-														Portugal
-													</td>
-													<td>
-														Gloucester
-													</td>
-													<td class="text-right">
-														$98,615
-													</td>
-												</tr>
-											</tbody>
-										</table>
+										 <table border="1" class="table table-striped">
+
+                            <tr class="bg-warning">
+
+
+                                <th><mark> ID </mark></th>
+                                <th><mark> MATERIA </mark></th>
+                                <th><mark> DOCENTE </mark></th>
+                                <th><mark> CALIFICACION </mark></th>
+
+
+                            </tr>
+
+
+                            <tr class="bg">
+
+                                <td><b> 1 </b></td>
+                                <td><b> INGLES </b></td>
+                                <td><b> CALEB GOMEZ </b></td>
+                                <td><b> 8 </b></td>
+
+
+                            </tr>
+
+
+                            <tr class="bg">
+
+                                <td><b> 2 </b></td>
+                                <td><b> ESPAÑOL </b></td>
+                                <td><b> HUGO HERNANDEZ </b></td>
+                                <td><b> 9 </b></td>
+
+
+                            </tr>
+                            <tr class="bg">
+
+                                <td><b> 3 </b></td>
+                                <td><b> CALCULO </b></td>
+                                <td><b> EDUARDO MEJIA</b></td>
+                                <td><b> 7 </b></td>
+
+
+                            </tr>
+
+                            <tr class="bg">
+                                <td><b> 4 </b></td>
+                                <td><b> FISICA </b></td>
+                                <td><b> CESAR GUTIERREZ</b></td>
+                                <td><b> 10 </b></td>
+
+
+
+
+                            </tr>
+                            <tr class="bg">
+                                <td><b> 5 </b></td>
+                                <td><b> EXPRESION ORAL Y ESCRITA </b></td>
+                                <td><b> LUIS MARTINEZ</b></td>
+                                <td><b> 10 </b></td>
+
+
+
+
+                            </tr>
+
+
+                        </table>
+
+									
 									</div>
 								</div>
 							</div>
 						</div>
-						<div class="col-md-12">
-							<div class="card card-plain">
-								<div class="card-header">
-									<h4 class="card-title"> Table on Plain Background</h4>
-									<p class="category"> Here is a subtitle for this table</p>
-								</div>
-								<div class="card-body">
-									<div class="table-responsive">
-										<table class="table">
-											<thead class=" text-primary">
-												<th>
-													Name
-												</th>
-												<th>
-													Country
-												</th>
-												<th>
-													City
-												</th>
-												<th class="text-right">
-													Salary
-												</th>
-											</thead>
-											<tbody>
-												<tr>
-													<td>
-														Dakota Rice
-													</td>
-													<td>
-														Niger
-													</td>
-													<td>
-														Oud-Turnhout
-													</td>
-													<td class="text-right">
-														$36,738
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Minerva Hooper
-													</td>
-													<td>
-														Curaçao
-													</td>
-													<td>
-														Sinaai-Waas
-													</td>
-													<td class="text-right">
-														$23,789
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Sage Rodriguez
-													</td>
-													<td>
-														Netherlands
-													</td>
-													<td>
-														Baileux
-													</td>
-													<td class="text-right">
-														$56,142
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Philip Chaney
-													</td>
-													<td>
-														Korea, South
-													</td>
-													<td>
-														Overland Park
-													</td>
-													<td class="text-right">
-														$38,735
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Doris Greene
-													</td>
-													<td>
-														Malawi
-													</td>
-													<td>
-														Feldkirchen in Kärnten
-													</td>
-													<td class="text-right">
-														$63,542
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Mason Porter
-													</td>
-													<td>
-														Chile
-													</td>
-													<td>
-														Gloucester
-													</td>
-													<td class="text-right">
-														$78,615
-													</td>
-												</tr>
-												<tr>
-													<td>
-														Jon Porter
-													</td>
-													<td>
-														Portugal
-													</td>
-													<td>
-														Gloucester
-													</td>
-													<td class="text-right">
-														$98,615
-													</td>
-												</tr>
-											</tbody>
-										</table>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-				</div>
+						
 				<footer class="footer">
 					<div class="container-fluid">
 						<nav>
