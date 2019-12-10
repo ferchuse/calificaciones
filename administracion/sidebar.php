@@ -17,19 +17,19 @@
 			</li>
 			<li class=" ">
 				<a href="../grupos">
-					<i class="now-ui-icons design-2_ruler-pencil"></i>
-					<p>Materias</p>
+					<i class="fas fa-users"></i>
+					<p>Grupos</p>
 				</a>
 			</li>
 			<li class=" ">
 				<a href="../docentes">
-					<i class="now-ui-icons users_single-02"></i>
+					<i class="fas fa-chalkboard-teacher"></i>
 					<p>Docentes</p>
 				</a>
 			</li>
 			<li class=" ">
 				<a href="../materias">
-					<i class="now-ui-icons users_single-02"></i>
+					<i class="now-ui-icons design-2_ruler-pencil"></i>
 					<p>Materias</p>
 				</a>
 			</li>

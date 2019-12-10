@@ -1,5 +1,5 @@
 <?php
-	
+	include("../../funciones/generar_select.php");
 	$page_title = "Alumnos";
 	
 ?>
@@ -126,7 +126,7 @@
 			</div>
 		</div>
 		<?php include("form_alumnos.php")?>
-		<?php include("scripts.php")?>
+		<?php include("../scripts.php")?>
 		
 		<script>
 			
