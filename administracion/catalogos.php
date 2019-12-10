@@ -7,7 +7,7 @@
 		<link rel="icon" type="image/png" href="../assets/img/favicon.png">
 		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 		<title>
-			Now UI Dashboard by Creative Tim
+			Alumnos
 		</title>
 		<meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
 		<!--     Fonts and icons     -->
@@ -22,32 +22,7 @@
 	
 	<body class="">
 		<div class="wrapper ">
-			<div class="sidebar" data-color="blue">
-				<div class="logo">
-					<a href="cfac.com" class="simple-text logo-mini">
-						CFAC
-					</a>
-					<a href="http://www.cfac.com" class="simple-text logo-normal">
-						CFAC
-					</a>
-				</div>
-				<div class="sidebar-wrapper" id="sidebar-wrapper">
-					<ul class="nav">
-						<li class=" ">
-							<a href="./perfil.php">
-								<i class="now-ui-icons users_single-02"></i>
-								<p>Mi Perfil</p>
-							</a>
-						</li>
-						<li class="active">
-							<a href="./calificaciones.php">
-								<i class="now-ui-icons design_bullet-list-67"></i>
-								<p>Mis Calificaciones</p>
-							</a>
-						</li>
-					</ul>
-				</div>
-			</div>
+			<?php include("sidebar.php")?>
 			<div class="main-panel" id="main-panel">
 				<!-- Navbar -->
 				<nav class="navbar navbar-expand-lg navbar-transparent  bg-primary  navbar-absolute">
