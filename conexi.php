@@ -4,11 +4,11 @@
 		
 		$host="localhost";
 		
-		if($_SERVER["SERVER_NAME"] == "estambresatoshka.com"){
+		if($_SERVER["SERVER_NAME"] == "localhost"){
 			
-			$db="microsit_atoshka";
-			$usuario="microsit_practic";
-			$pass="UAEH@2018";
+			$db="calificaciones";
+			$usuario="sistemas";
+			$pass="Glifom3dia";
 		
 		}
 		else{
@@ -28,7 +28,7 @@
     if (!($link=mysqli_connect($host,$usuario,$pass)))
 		{
 			die( "Error conectando a la base de datos.". mysqli_error($link));
-		}
+			}
 		
 		if (!mysqli_select_db($link, $db))
 		{

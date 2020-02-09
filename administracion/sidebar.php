@@ -1,9 +1,9 @@
 <div class="sidebar" data-color="blue">
 	<div class="logo">
 		<a href="cfac.com" class="simple-text logo-mini">
-			CFAC
+			<img src="../assets/img/favicon.png" class="img-fluid">
 		</a>
-		<a href="http://www.cfac.com" class="simple-text logo-normal">
+		<a href="https://centrocfac.com" class="simple-text logo-normal">
 			CFAC
 		</a>
 	</div>
