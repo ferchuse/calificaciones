@@ -25,6 +25,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet"
 		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <link rel="stylesheet" href="../assets/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="../assets/css/alertify.min.css" />
 		
     <link rel="stylesheet" type="text/css" href="login.css?<?= date("d-m-y-h-i-s")?>" />
 		
@@ -46,69 +47,38 @@
 							</div>
 							
 							
+							<b>Tipo de Acceso: </b> </br>
+							<label><input type="radio" name="tipo_usuario" value="alumno"  required/> Alumno 	</label>
+							<label><input type="radio" name="tipo_usuario" value="admin"  required/> Administracion 	</label>
 							
-							<ul class="nav nav-tabs nav-justified">
-								<li class="nav-item active">
-									<a class="nav-link active" id="tab_alumnos" data-toggle="tab" href="#alumnos">Alumnos</a>
-								</li>
-								<li class="nav-item">
-									<a class="nav-link" id="tab_admin" data-toggle="pill" href="#admin">Administración</a>
-								</li>
-								
-							</ul>
-							
-							<!-- Tab panes -->
-							
-							<div class="tab-content">
-								
-								<div id="alumnos" class="tab-pane container active">
-									<div class="form-group">
-										<input name="matricula" placeholder="Matrícula" required class="form-control">
-									</div>
-									
-									<input type="hidden" name="tipo_usuario" value="alumnos"/>
-									<input type="password" name="password" class="form-control " placeholder="Contraseña" required="" />
-									
-									<button type="submit"  name="iniciar" class="btn btn-lg btn-primary btn-block">
-										<i class="fa fa-sign-in"></i> Iniciar Sesión
-									</button>
-								</form>
+							<div class="form-group">
+								<input name="username" placeholder="Matrícula/ Nombre de Usuario" required class="form-control">
 							</div>
 							
-							<div id="admin" class="tab-pane container  fade ">
-								
-								<div class="form-group">
-									<input  disabled name="id_usuarios" placeholder="" required class="form-control">
-								</div>
-								<input type="hidden" name="tipo_usuario" value="admin" disabled />
-								<input disabled type="password" name="password" class="form-control " 
-								placeholder="Contraseña" required="" />
-								
-								<button type="submit"  name="iniciar" class="btn btn-lg btn-primary btn-block">
-									<i class="fa fa-sign-in"></i> Iniciar Sesión
-									
-								</button>
-								
-							</div>
-						</div>
 						
-					</form>
+							<input type="password" name="password" class="form-control " placeholder="Contraseña" required="" />
+							
+							<button type="submit"  name="iniciar" class="btn btn-lg btn-primary btn-block">
+								<i class="fa fa-sign-in"></i> Iniciar Sesión
+							</button>
+							
+							
+							
+						</form>
+						
+					</section>
 					
-					
-					
-				</section>
+				</div>
+				
 				
 			</div>
-			
-			
 		</div>
-	</div>
-	
-	
-	<script  src="../assets/js//core/jquery.min.js"></script>
-	<script  src="../assets/js/core/bootstrap.min.js"></script>
-	<script  src="../assets/js/alertify.min.js"></script>
-	<script  src="login.js"></script>
+		
+		
+		<script  src="../assets/js//core/jquery.min.js"></script>
+		<script  src="../assets/js/core/bootstrap.min.js"></script>
+		<script  src="../assets/js/alertify.min.js"></script>
+		<script  src="login.js"></script>
 	</body>
 	
 </html>		

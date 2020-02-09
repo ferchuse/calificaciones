@@ -32,14 +32,14 @@
 					<a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 						<i class="now-ui-icons users_single-02"></i>
 						<p>
-							<span class=" d-md-block">Admin</span>
+							<span class=" d-md-block"><?= $_COOKIE["nombre_usuarios"]?></span>
 						</p>
 						<p>
 							<span class="d-lg-none d-md-block">Opciones</span>
 						</p>
 					</a>
 					<div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-						<a class="dropdown-item" href="../../login/logout.php">Salir</a>
+						<a class="dropdown-item" href="../login/logout.php">Salir</a>
 						
 					</div>
 				</li>

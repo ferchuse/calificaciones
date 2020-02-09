@@ -6,7 +6,7 @@
 			<script>
 				document.getElementById('copyright').appendChild(document.createTextNode(new Date().getFullYear()))
 			</script>,Desarrollado por 
-			<a href="https://www.glifo.mx" target="_blank">Glifo Media</a>
+			<a href="www.glifo.mx" target="_blank">Glifo Media</a>
 		</div>
 	</div>
 </footer>
