@@ -8,22 +8,22 @@
 	
 	$trimestres = 
 	[
-		[
-		"id_trimestre" =>"1",
-		"nombre_trimestre" => "1er Trimestre"
-		],
-		[
-		"id_trimestre" => "2",
-		"nombre_trimestre" => "2o Trimestre"
-		],
-		[
-		"id_trimestre" => "3",
-		"nombre_trimestre" => "3er Trimestre"
-		],
-		[
-		"id_trimestre" => "4",
-		"nombre_trimestre" => "4o Trimestre"
-		]
+	[
+	"id_trimestre" =>"1",
+	"nombre_trimestre" => "1er Trimestre"
+	],
+	[
+	"id_trimestre" => "2",
+	"nombre_trimestre" => "2o Trimestre"
+	],
+	[
+	"id_trimestre" => "3",
+	"nombre_trimestre" => "3er Trimestre"
+	],
+	[
+	"id_trimestre" => "4",
+	"nombre_trimestre" => "4o Trimestre"
+	]
 	];
 	
 ?>
@@ -92,17 +92,18 @@
 									<h4 class="card-title text-primary"><?= $alumno["ape_pat"]." ".$alumno["ape_mat"]." ".$alumno["nombre_alumno"]?>  </h4>
 									<h4 class="card-title"> Modalidad: Bachillerato 18 meses </h4>
 									<h4 class="card-title"> Grupo: <?= $alumno["id_grupos"]?> </h4>
-									</div>
+								</div>
 								
 								<div class="card-body">
 									<?php
+										$i = 1;
 										foreach($trimestres AS $trimestre){
 											
-											
+											if($i % 2 == 1) echo '<div class="row">';
 										?>
 										
 										<div class="col-md-6">
-											<h5 class="text-center"><?= $trimestre["nombre_trimestre"] ?></h5>
+											<h5 class="text-center"><?= $trimestre["nombre_trimestre"] . $i?></h5>
 											<table class="table table-striped table bordered">
 												
 												<tr class="bg-secondary text-white">
@@ -125,9 +126,15 @@
 												
 											</table>
 										</div>
+										
 										<?php
+											if($i % 2 == 0) echo '</div>';
+											$i++;
 										}
+										
 									?>
+									
+									
 									
 								</div>
 							</div>
@@ -153,4 +160,4 @@
 				<script src="../assets/demo/demo.js"></script>
 			</body>
 			
-		</html>													
+		</html>																			
