@@ -9,12 +9,12 @@
 			$db="calificaciones";
 			$usuario="sistemas";
 			$pass="Glifom3dia";
-		
+			
 		}
 		else{
-		$db="calificaciones";
-			$usuario="sistemas";
-			$pass="Glifom3dia";
+			$db="centrocf_calificaciones";
+			$usuario="centrocf_admin";
+			$pass="Cfac@2020";
 			// $set_names = "SET NAMES 'utf8'";
 		}
 		
@@ -27,7 +27,7 @@
     if (!($link=mysqli_connect($host,$usuario,$pass)))
 		{
 			die( "Error conectando a la base de datos.". mysqli_error($link));
-			}
+		}
 		
 		if (!mysqli_select_db($link, $db))
 		{
@@ -35,17 +35,17 @@
 		}
 		
 		if($_SERVER["SERVER_NAME"] == "estambresatoshka.com"){
-				mysqli_query($link, "SET CHARACTER SET utf8") or die("Error en charset UTF8".mysqli_error($link));
+			mysqli_query($link, "SET CHARACTER SET utf8") or die("Error en charset UTF8".mysqli_error($link));
 		}
-			
+		
 		
 		/*  if (!mysqli_query( $link, $set_local))	
 			{
 			die( "Error cambiando TimeZone.". mysqli_error());
 			
-				mysqli_query($link, "SET NAMES 'utf8'") or die("Error Cambiando charset").mysqli_error($link);
-			mysqli_query($link, "SET CHARACTER SET utf8") or die("Error en charset UTF8".mysqli_error($link));
-			
+			mysqli_query($link, "SET NAMES 'utf8'") or die("Error Cambiando charset").mysqli_error($link);
+		mysqli_query($link, "SET CHARACTER SET utf8") or die("Error en charset UTF8".mysqli_error($link));
+		
 		} */
 		
 		
@@ -57,10 +57,10 @@
 		// mysqli_query ("set collation_connection='utf8_general_ci'");
 		// mysqli_query("SET NAMES 'utf8'");
 		/* mysqli_query("SET CHARACTER SET utf8") or die(MYSQL_ERROR());
-			mysqli_query("SET SESSION collation_connection = 'utf8_unicode_ci'");
-			mysqli_set_charset('utf8', $link) or die(MYSQL_ERROR());
+		mysqli_query("SET SESSION collation_connection = 'utf8_unicode_ci'");
+		mysqli_set_charset('utf8', $link) or die(MYSQL_ERROR());
 		*/
 		
 		return $link;
-	}
-?>
+		}
+		?>		
