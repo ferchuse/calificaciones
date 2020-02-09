@@ -1,3 +1,33 @@
+
+<?php
+	
+	include("consultas/get_alumno.php");
+	include("consultas/get_materias.php");
+	
+	$alumno = getAlumno($link);
+	
+	$trimestres = 
+	[
+		[
+		"id_trimestre" =>"1",
+		"nombre_trimestre" => "1er Trimestre"
+		],
+		[
+		"id_trimestre" => "2",
+		"nombre_trimestre" => "2o Trimestre"
+		],
+		[
+		"id_trimestre" => "3",
+		"nombre_trimestre" => "3er Trimestre"
+		],
+		[
+		"id_trimestre" => "4",
+		"nombre_trimestre" => "4o Trimestre"
+		]
+	];
+	
+?>
+
 <!DOCTYPE html>
 <html lang="es">
 	
@@ -25,7 +55,7 @@
 			<div class="sidebar" data-color="blue">
 				<div class="logo">
 					<a href="https://centrocfac.com" class="simple-text logo-mini">
-							<img src="../assets/img/favicon.png" class="img-fluid">
+						<img src="../assets/img/favicon.png" class="img-fluid">
 					</a>
 					<a href="https://centrocfac.com" class="simple-text logo-normal">
 						CFAC
@@ -33,7 +63,7 @@
 				</div>
 				<div class="sidebar-wrapper" id="sidebar-wrapper">
 					<ul class="nav">
-						<li class=" ">
+						<li class=" " hidden>
 							<a href="./perfil.php">
 								<i class="now-ui-icons users_single-02"></i>
 								<p>Mi Perfil</p>
@@ -51,91 +81,76 @@
 			<div class="main-panel" id="main-panel">
 				<!-- Navbar -->
 				<?php include("navbar.php")?>
-			<!-- End Navbar -->
-			<div class="panel-header panel-header-sm">
-			</div>
-			<div class="content">
-				<div class="row">
-					<div class="col-md-12">
-						<div class="card">
-							<div class="card-header">
-								<h4 class="card-title">  </h4>
-								<h4 class="card-title"> Modalidad: Bachillerato 18 meses </h4>
-								<h4 class="card-title"> Grupo: 2º Trimestre </h4>
-							</div>
-							
-							<div class="card-body">
-								<div class="table-responsive">
-									<table class="table table-striped table bordered">
+				<!-- End Navbar -->
+				<div class="panel-header panel-header-sm">
+				</div>
+				<div class="content">
+					<div class="row">
+						<div class="col-md-12">
+							<div class="card">
+								<div class="card-header">
+									<h4 class="card-title text-primary"><?= $alumno["ape_pat"]." ".$alumno["ape_mat"]." ".$alumno["nombre_alumno"]?>  </h4>
+									<h4 class="card-title"> Modalidad: Bachillerato 18 meses </h4>
+									<h4 class="card-title"> Grupo: <?= $alumno["id_grupos"]?> </h4>
+									</div>
+								
+								<div class="card-body">
+									<?php
+										foreach($trimestres AS $trimestre){
+											
+											
+										?>
 										
-										<tr class="bg-secondary">
-											
-											
-											<th><mark> MATERIA </mark></th>
-											<th><mark> DOCENTE </mark></th>
-											<th><mark> CALIFICACION </mark></th>
-											
-											
-										</tr>
-										
-										
-										<tr class="bg">
-											
-											
-											<td><b> INGLES </b></td>
-											<td><b> CALEB GOMEZ </b></td>
-											<td><b> 8 </b></td>
-											
-											
-										</tr>
-										
-										
-										<tr class="bg">
-											
-											
-											<td><b> ESPAÑOL </b></td>
-											<td><b> HUGO HERNANDEZ </b></td>
-											<td><b> 9 </b></td>
-											
-											
-										</tr>
-										<tr class="bg">
-											
-											
-											<td><b> CALCULO </b></td>
-											<td><b> EDUARDO MEJIA</b></td>
-											<td><b> 7 </b></td>
-											
-											
-										</tr>
-										
-										
-									</table>
-									
+										<div class="col-md-6">
+											<h5 class="text-center"><?= $trimestre["nombre_trimestre"] ?></h5>
+											<table class="table table-striped table bordered">
+												
+												<tr class="bg-secondary text-white">
+													<th>MATERIA </th>
+													<th>CALIFICACIÓN </th>
+												</tr>
+												
+												<?php
+													$calificaciones = getCalificaciones($link,$trimestre["id_trimestre"] );
+													
+													foreach($calificaciones AS $calificacion){
+													?>
+													<tr class="bg">
+														<td><b>  <?= $calificacion["materia"]?> </b></td>
+														<td class="text-right"><b>  <?= $calificacion["final"]?> </b></td>
+													</tr>
+													<?php
+													}
+												?>
+												
+											</table>
+										</div>
+										<?php
+										}
+									?>
 									
 								</div>
 							</div>
 						</div>
+						
+						<?php include("footer.php")?>
 					</div>
-					
-					<?php include("footer.php")?>
 				</div>
-			</div>
-			<!--   Core JS Files   -->
-			<script src="../assets/js/core/jquery.min.js"></script>
-			<script src="../assets/js/core/popper.min.js"></script>
-			<script src="../assets/js/core/bootstrap.min.js"></script>
-			<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-			<!--  Google Maps Plugin    -->
-			<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-			<!-- Chart JS -->
-			<script src="../assets/js/plugins/chartjs.min.js"></script>
-			<!--  Notifications Plugin    -->
-			<script src="../assets/js/plugins/bootstrap-notify.js"></script>
-			<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-			<script src="../assets/js/now-ui-dashboard.min.js?v=1.3.0" type="text/javascript"></script>
-			<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-			<script src="../assets/demo/demo.js"></script>
-		</body>
-		
-	</html>		
+				<!--   Core JS Files   -->
+				<script src="../assets/js/core/jquery.min.js"></script>
+				<script src="../assets/js/core/popper.min.js"></script>
+				<script src="../assets/js/core/bootstrap.min.js"></script>
+				<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+				<!--  Google Maps Plugin    -->
+				<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
+				<!-- Chart JS -->
+				<script src="../assets/js/plugins/chartjs.min.js"></script>
+				<!--  Notifications Plugin    -->
+				<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+				<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
+				<script src="../assets/js/now-ui-dashboard.min.js?v=1.3.0" type="text/javascript"></script>
+				<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+				<script src="../assets/demo/demo.js"></script>
+			</body>
+			
+		</html>													

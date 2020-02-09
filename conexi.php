@@ -12,10 +12,9 @@
 		
 		}
 		else{
-			$db="atoshka";
+		$db="calificaciones";
 			$usuario="sistemas";
 			$pass="Glifom3dia";
-			$set_local = "SET time_zone = '-05:00'";
 			// $set_names = "SET NAMES 'utf8'";
 		}
 		
