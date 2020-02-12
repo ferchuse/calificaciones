@@ -103,7 +103,7 @@
 										?>
 										
 										<div class="col-md-6">
-											<h5 class="text-center"><?= $trimestre["nombre_trimestre"] . $i?></h5>
+											<h5 class="text-center"><?= $trimestre["nombre_trimestre"]?></h5>
 											<table class="table table-striped table bordered">
 												
 												<tr class="bg-secondary text-white">
