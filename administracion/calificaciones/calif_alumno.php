@@ -2,7 +2,8 @@
 	include('../../conexi.php');
 	$link = Conectarse();
 	include("../../funciones/generar_select.php");
-	$page_title = "Calificaciones por Grupo";
+	include("../../funciones/create_list.php");
+	$page_title = "Calificaciones por Alumno";
 	
 ?>
 
@@ -37,7 +38,7 @@
 							
 							<div class="card">
 								<div class="card-header">
-									<h4 class="card-title">Filtrar por:</h4>
+									<h4 class="card-title">Filtros:</h4>
 								</div>
 								<div class="card-body">
 									<form id="form_filtros" class="was-validated">
@@ -49,9 +50,10 @@
 											<option value="3">Grupo 3</option>
 										</select>
 										
-										<label>Materia: </label>
-										<?= generar_select($link, "materias", "id_materias", "materia", false, false, true	);	?>
-										
+										<label>Alumno: </label>
+										<div id="list_alumnos">
+										<?= create_list($link, "alumnos", "id_alumnos", "nombre_alumno", [0=> ["name" => "id_grupos" , "value" => "1"]]	);	?>
+										</div>
 										<button class="btn mx-2 btn-lg btn-primary" type="submit">
 											<i class="fas fa-search"></i> Buscar
 										</button>

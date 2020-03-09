@@ -9,17 +9,21 @@
 	</div>
 	<div class="sidebar-wrapper" id="sidebar-wrapper">
 		<ul class="nav">
-			<li class="active">
-				<a href="../calificaciones">
-					<i class="fas fa-chalkboard"></i>
-					<p>Calificaciones</p>
-				</a>
-			</li>
-			<li class="" hidden>
-				<a href="./alumnos">
+			<li class="<?= $page_title == "Alumnos" ? "active" : ""?>" >
+				<a href="../alumnos">
 					<i class="now-ui-icons users_single-02"></i>
 					<p>Alumnos</p>
 				</a>
+			</li>
+			
+			<li class="nav-item dropdown <?= $link_activo == "Calificaciones" ? "active" : ""?> ">
+				<a class="nav-link dropdown-toggle " href="#" id="navbardrop" data-toggle="dropdown">
+					<i class="fas fa-chalkboard"></i> 	Calificaciones
+				</a>
+				<div class="dropdown-menu">
+					<a class="dropdown-item" href="../calificaciones/index.php">Por Grupo</a>
+					<a class="dropdown-item" href="../calificaciones/calif_alumno.php">Por Alumno</a>
+				</div>
 			</li>
 			<li class=" " hidden>
 				<a href="../grupos">

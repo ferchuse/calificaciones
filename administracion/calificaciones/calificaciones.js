@@ -10,7 +10,12 @@ function onLoad(){
 	
 	$("#form_filtros").on("submit", filtrarRegistros);
 	
-	
+	$('#list_alumnos a').click(function() { 
+		console.log("activateLi()")
+		$('a.list-group-item.active').removeClass("active"); 
+		$(this).addClass("active"); 
+		getCalifAlumno($(this).data("id_registro"));
+	}); 
 	// $("#lista_boletos").on("click", ".cancelar", confirmaCancelacion);
 	
 	
@@ -44,8 +49,30 @@ function filtrarRegistros(evt){
 }
 
 
+function getCalifAlumno(id_alumnos){
+	console.log("getCalifAlumno()")
+	
+	// let boton = $("#form_filtros").find(":submit");
+	// let icono = boton.find(".fas");
+	
+	// boton.prop("disabled", true);
+	// icono.toggleClass("fa-search fa-spinner fa-spin");
+	
+	$.ajax({
+		url: 'consultas/lista_calif_alumno.php',
+		data: {"id_alumnos": id_alumnos}
+		}).done(function(respuesta){
+		$("#lista_calificaciones").html(respuesta)
+		
+		}).always(function(){
+		
+		// boton.prop("disabled", false);
+		// icono.toggleClass("fa-search fa-spinner fa-spin");
+	});
+}
+
 function listarCalificaciones(){
-	console.log("listarCorridas()")
+	console.log("listarCalificaciones()")
 	
 	let boton = $("#form_filtros").find(":submit");
 	let icono = boton.find(".fas");
@@ -86,7 +113,7 @@ function guardarCalificacion(event){
 		}
 		}).done(function(respuesta){
 		if(respuesta.estatus == 'success'){
-			 alertify.set('notifier','position', 'bottom-left');
+			alertify.set('notifier','position', 'bottom-left');
 			alertify.success('Se ha guardado correctamente');
 			
 			// listarCalificaciones();
