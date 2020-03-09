@@ -20,7 +20,7 @@
 	
 	
 	$consulta.="
-	ORDER BY ape_pat, ape_mat ASC "
+	ORDER BY nombre_alumno ASC "
 	;
 	
 	
