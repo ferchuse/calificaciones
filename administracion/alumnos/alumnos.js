@@ -115,11 +115,12 @@ function guardarRegistro(event){
 		if(respuesta.estatus =="success" ){
 			
 			alertify.success("Guardado")
+			$("#modal_edicion").modal("hide");
 		}
 		else{
 			alertify.error("Ocurrio un error")
 		}
-		$("#modal_edicion").modal("hide");
+		
 		listarRegistros();
 		// window.location.reload(true);
 		}).fail(function(xhr, textEstatus, error){
