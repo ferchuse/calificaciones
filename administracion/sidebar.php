@@ -21,7 +21,7 @@
 					<i class="fas fa-chalkboard"></i> 	Calificaciones
 				</a>
 				<div class="dropdown-menu">
-					<a class="dropdown-item" href="../calificaciones/index.php">Por Grupo</a>
+					<a class="dropdown-item" href="../calificaciones/index.php">Por Materia</a>
 					<a class="dropdown-item" href="../calificaciones/calif_alumno.php">Por Alumno</a>
 				</div>
 			</li>

@@ -2,7 +2,7 @@
 	include('../../conexi.php');
 	$link = Conectarse();
 	include("../../funciones/generar_select.php");
-	$page_title = "Calificaciones por Grupo";
+	$page_title = "Calificaciones por Materia";
 	
 ?>
 
