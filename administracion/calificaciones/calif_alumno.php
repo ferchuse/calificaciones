@@ -43,7 +43,7 @@
 								<div class="card-body">
 									<form id="form_filtros" class="was-validated">
 										<label>Grupo: </label>
-										<select name="id_grupos" required class="form-control">
+										<select name="id_grupos" id="id_grupos" required class="form-control">
 											<option value="">Elige</option>
 											<option value="1">Grupo 1</option>
 											<option value="2">Grupo 2</option>
@@ -52,11 +52,9 @@
 										
 										<label>Alumno: </label>
 										<div id="list_alumnos">
-										<?= create_list($link, "alumnos", "id_alumnos", "nombre_alumno", [0=> ["name" => "id_grupos" , "value" => "1"]]	);	?>
+										
 										</div>
-										<button class="btn mx-2 btn-lg btn-primary" type="submit">
-											<i class="fas fa-search"></i> Buscar
-										</button>
+										
 									</form>
 								</div>
 							</div>
@@ -86,7 +84,7 @@
 		</div>
 		
 		<?php include("../scripts.php")?>
-		<script src="calificaciones.js?v=<?= date("d-m-Y-H-i-s")?>"></script>
+		<script src="calif_alumno.js?v=<?= date("d-m-Y-H-i-s")?>"></script>
 		
 	</body>
 	

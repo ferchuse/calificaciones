@@ -33,10 +33,11 @@
 		FROM
 		materias
 		LEFT JOIN calificaciones USING(id_materias)
+		
 		WHERE
 		id_trimestre = '{$id_trimestre}'
 		AND id_alumnos = '{$id_alumnos}'
-		ORDER BY materia
+		ORDER BY id_materias, id_trimestre
 		";
 		
 		$respuesta["consulta"]= $consulta;
@@ -65,15 +66,23 @@
 		}
 		return $respuesta;
 	}
-	
 ?>
 
+<h5 class="text-center"><?= $_GET["nombre"]?></h5>
+
 <?php
+	
+	
 	$i = 1;
 	foreach($trimestres AS $trimestre){
 		
+		$calificaciones = getCalificaciones($link,$trimestre["id_trimestre"], $_GET["id_registro"]);
+		
+		
 		if($i % 2 == 1) echo '<div class="row">';
 	?>
+	
+	
 	
 	<div class="col-md-6">
 		<h5 class="text-center"><?= $trimestre["nombre_trimestre"]?></h5>
@@ -85,7 +94,6 @@
 			</tr>
 			
 			<?php
-				$calificaciones = getCalificaciones($link,$trimestre["id_trimestre"], $_GET["id_alumnos"]);
 				
 				// echo print_r($calificaciones);
 				
