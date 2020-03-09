@@ -34,7 +34,7 @@
 				</div>
 				<div class="content">
 					<div class="row">
-						<div class="col-3 d-print-none">
+						<div class="col-sm-3 d-print-none">
 							
 							<div class="card">
 								<div class="card-header">
@@ -59,7 +59,7 @@
 								</div>
 							</div>
 						</div>
-						<div class="col-9">
+						<div class="col-sm-9">
 							<div class="card">
 								<div class="card-header" hidden>
 									
