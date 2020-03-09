@@ -78,7 +78,7 @@
 		<?php include("form_alumnos.php")?>
 		<?php include("../scripts.php")?>
 		
-		<script src="alumnos.js"></script>
+		<script src="alumnos.js?v=<?= date("d-m-Y-H-i-s")?>"></script>
 		
 	</body>
 	
