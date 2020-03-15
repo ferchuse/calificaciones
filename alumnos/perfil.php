@@ -50,6 +50,7 @@
 		<link href="../assets/css/now-ui-dashboard.css?v=1.3.0" rel="stylesheet" />
 		<!-- CSS Just for demo purpose, don't include it in your project -->
 		<link href="../assets/demo/demo.css" rel="stylesheet" />
+		<link href="../assets/css/alertify.min.css" rel="stylesheet" />
 	</head>
 	
 	<body class="user-profile">
@@ -88,7 +89,7 @@
 											<h5 class="title"><?= $alumno["nombre_alumno"]." ".$alumno["ape_pat"]?></h5>
 										</a>
 										<p class="description">
-											3er Trimestre
+											
 										</p>
 									</div>
 									<p class="description text-center">
@@ -118,10 +119,13 @@
 								<div class="card-body">
 									<form id="form_alumno">
 										<div class="row">
+											
+											<input value="<?= $alumno["id_alumnos"]?>" type="hidden" name="id_alumnos">
 											<div class="col-md-3 pr-1">
 												<div class="form-group">
+												
 													<label> Matricula </label>
-													<input type="text" readonly class="form-control" name="matricula" placeholder="Matricula">
+													<input value="<?= $alumno["matricula"]?>" type="text" readonly class="form-control" name="matricula" placeholder="Matricula">
 												</div>
 											</div>
 											<div class="col-md-3 px-1">
@@ -146,39 +150,54 @@
 												<div class="form-group">
 													<label> <b>Sexo:</b> </label>
 													<select name="sexo" id="sexo" class="form-control">
-														<option value="1"> MASCULINO </option>
-														<option value="2"> FEMENINO </option>
+														<option <?= $alumno["sexo"] == "M" ? "selected" : ""?> value="M"> MASCULINO </option>
+														<option <?= $alumno["sexo"] == "F" ? "selected" : ""?>  value="F"> FEMENINO </option>
 													</select>
 												</div>
 											</div>
 											<div class="col-md-3 px-1">
 												<div class="form-group">
 													<label> Fecha De Nacimiento </label>
-													<input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha De Nacimiento">
+													<input type="date" name="fecha_nacimiento" class="form-control" placeholder="Fecha De Nacimiento" <?= $alumno["fecha_nacimiento"] ?> >
 												</div>
 											</div>
 											<div class="col-md-3 px-1">
 												<div class="form-group">
 													<label> Telefono </label>
-													<input type="tel" name="celular" class="form-control" placeholder="Teléfono">
+													<input type="tel" name="celular" class="form-control" placeholder="Celular" <?= $alumno["celular"]?> >
+												</div>
+											</div>
+											<div class="col-md-2 pl-1">
+												<div class="form-group">
+													<label for="exampleInputEmail1">Grupo:</label>
+													<input readonly type="number" name="grupo" class="form-control" value="<?= $alumno["id_grupos"]?>">
 												</div>
 											</div>
 											<div class="col-md-4 pl-1">
 												<div class="form-group">
 													<label for="exampleInputEmail1">Correo</label>
-													<input type="email" class="form-control" placeholder="Email">
+													<input type="email" class="form-control" placeholder="Email" value=<?= $alumno["correo"]?>>
 												</div>
 											</div>
-											<div class="col-md-4 pl-1">
+											<div class="col-md-3 pl-1">
 												<div class="form-group">
-													<label for="exampleInputEmail1">Contraseña</label>
-													<input type="password" name="contrasena" class="form-control" value="<?= $alumno["contrasena"]?>">
+													<label for="contrasena">Contraseña</label>
+													<input type="password" id="contrasena" name="contrasena" class="form-control" value="<?= $alumno["contrasena"]?>">
 												</div>
-											<div class="col-md-4 pl-1">
+											</div>
+											<div class="col-md-3 pl-1">
 												<div class="form-group">
-													<label for="exampleInputEmail1">Grupo</label>
-													<input type="password" name="contrasena" class="form-control" value="<?= $alumno["id_grupos"]?>">
+													<label for="contrasena2">Repite Contraseña</label>
+													<input type="password" id="contrasena2" class="form-control" value="<?= $alumno["contrasena"]?>">
 												</div>
+											</div>
+											
+											<div class="col-md-4 pl-1">
+												
+												<button class="btn btn-success">
+													<i class="fa fa-save"> </i> Guardar
+												</button>
+												
 											</div>
 										</div>
 										
@@ -197,16 +216,59 @@
 		<script src="../assets/js/core/popper.min.js"></script>
 		<script src="../assets/js/core/bootstrap.min.js"></script>
 		<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
-		<!--  Google Maps Plugin    -->
-		<script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
-	<!-- Chart JS -->
-	<script src="../assets/js/plugins/chartjs.min.js"></script>
-	<!--  Notifications Plugin    -->
-	<script src="../assets/js/plugins/bootstrap-notify.js"></script>
-	<!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-	<script src="../assets/js/now-ui-dashboard.min.js?v=1.3.0" type="text/javascript"></script>
-	<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-	<script src="../assets/demo/demo.js"></script>
+		<script src="../assets/js/alertify.min.js"></script>
+		
+		<script src="../assets/js/now-ui-dashboard.min.js?v=1.3.0" type="text/javascript"></script>
+		<!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
+		<script >
+			
+			$("#form_alumno").submit(guardarRegistro);
+			
+			function guardarRegistro(event){
+				console.log("guardarRegistro()")
+				event.preventDefault()
+				
+				if($("#contrasena").val() != $("#contrasena2").val())
+				
+				{
+					alertify.error("Las contraseñas no coinciden")
+					return false;
+				}
+				
+				let $boton = $(this).find(':submit');
+				let $icono = $(this).find(".fa");
+				$boton.prop("disabled", true);
+				$icono.toggleClass("fa-save fa-spinner fa-spin");
+				
+				$.ajax({ 
+					"url": "consultas/guardar_alumno.php",
+					"dataType": "JSON",
+					"method": "POST",
+					"data": $("#form_alumno").serialize()
+					}).done( function alTerminar (respuesta){
+					console.log("respuesta", respuesta);
+					if(respuesta.estatus =="success" ){
+						
+						alertify.success("Guardado")
+						
+					}
+					else{
+						alertify.error("Ocurrio un error")
+					}
+					
+					}).fail(function(xhr, textEstatus, error){
+					console.log("textEstatus", textEstatus);
+					console.log("error", error);
+					
+					}).always(function(){
+					
+					$boton.prop("disabled", false);
+					$icono.toggleClass("fa-save fa-spinner fa-spin"); 
+				});
+				
+			}	
+			
+		</script>
 	</body>
 	
-	</html>									
+</html>										

@@ -1,15 +1,14 @@
 <?php 
 
-	include('../../../conexi.php');
+	include("../../conexi.php");
 	$link = Conectarse();
 	
 	$respuesta = array();
 	
 	$consulta = "
-	UPDATE calificaciones SET
-	final = '{$_POST["nuevo_valor"]}'
-	WHERE id_calificaciones =  '{$_POST["id_registro"]}'
-	
+	UPDATE alumnos SET
+	contrasena = '{$_POST["contrasena"]}'
+	WHERE id_alumnos =  '{$_POST["id_alumnos"]}'
 	
 	";
 	
